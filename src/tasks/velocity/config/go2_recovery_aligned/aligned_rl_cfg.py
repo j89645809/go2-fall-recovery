@@ -7,7 +7,7 @@ from mjlab.rl import RslRlModelCfg,RslRlOnPolicyRunnerCfg,RslRlPpoAlgorithmCfg
 @dataclass
 class TeacherPpoCfg(RslRlPpoAlgorithmCfg):
     class_name:str='src.tasks.velocity.config.go2_recovery_aligned.teacher_ppo:TeacherAnchoredPPO'
-    teacher_checkpoint:str=os.environ.get('FRNET_TEACHER_CHECKPOINT', 'logs/rsl_rl/go2_recovery_frnet_aligned/2026-10-11_16-03-28_acceptance_v32_backend_static_reset_20/model_14475.pt')
+    teacher_checkpoint:str=os.environ.get('FRNET_TEACHER_CHECKPOINT', 'checkpoints/model_14475.pt')
     teacher_pull:float=float(os.environ.get('FRNET_TEACHER_PULL', '0.02'))
     forced_learning_rate:float=float(os.environ.get('FRNET_TEACHER_LR', '5e-6'))
     mirror_loss_weight:float=float(os.environ.get('FRNET_MIRROR_LOSS_WEIGHT', '0.01'))
