@@ -1,3 +1,11 @@
+# go2-fall-recovery
+
+Unitree Go2 fall recovery from static fallen states (FRNet-aligned policy, mjlab/MuJoCo). Project code, acceptance criteria, evaluation scripts, the baseline checkpoint and result reports are described in [PUBLIC_RELEASE.md](PUBLIC_RELEASE.md).
+
+This repository is built on [unitree_rl_mjlab](https://github.com/unitreerobotics/unitree_rl_mjlab) (Apache-2.0); its original README follows.
+
+---
+
 # Unitree RL Mjlab
 
 
