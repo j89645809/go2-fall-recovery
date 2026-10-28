@@ -1,0 +1,71 @@
+{
+  "profile": "stable_recovery_sim_v1",
+  "checkpoint": "model_14475.pt",
+  "runs": [
+    {
+      "seed": 2345,
+      "strict": 0.6135817307692307,
+      "legacy_tiered": 0.9110576923076923,
+      "stable": 0.39302884615384615,
+      "ever_stable_3s": 993,
+      "terminal_stable_3s": 654,
+      "later_major_refall": 17,
+      "pose": {
+        "back": 0.4182692307692308,
+        "front": 0.4495192307692308,
+        "left": 0.3918269230769231,
+        "right": 0.3125
+      },
+      "terrain": {
+        "flat": 0.6724137931034483,
+        "hf_pyramid_slope": 0.11,
+        "hf_pyramid_slope_inv": 0.075,
+        "pyramid_stairs": 0.4575,
+        "pyramid_stairs_inv": 0.405,
+        "random_rough": 0.205
+      }
+    },
+    {
+      "seed": 3456,
+      "strict": 0.6153846153846154,
+      "legacy_tiered": 0.90625,
+      "stable": 0.38882211538461536,
+      "ever_stable_3s": 991,
+      "terminal_stable_3s": 647,
+      "later_major_refall": 25,
+      "pose": {
+        "back": 0.4110576923076923,
+        "front": 0.44711538461538464,
+        "left": 0.3798076923076923,
+        "right": 0.3173076923076923
+      },
+      "terrain": {
+        "flat": 0.6961206896551724,
+        "hf_pyramid_slope": 0.105,
+        "hf_pyramid_slope_inv": 0.12,
+        "pyramid_stairs": 0.4125,
+        "pyramid_stairs_inv": 0.375,
+        "random_rough": 0.195
+      }
+    }
+  ],
+  "mean_rates": {
+    "strict": 0.6144831730769231,
+    "legacy_tiered": 0.9086538461538461,
+    "stable": 0.3909254807692307
+  },
+  "criteria": {
+    "angular_speed_max_rad_s": 0.5,
+    "foot_force_min_N": 8.0,
+    "foot_vertical_support_weight_fraction_min": 0.8,
+    "gravity_cos_min": 0.9,
+    "height_calibration": "simulation replay310 quiet low cases; median0.272m;10-90percentile0.258-0.279m; provisional0.26m; not hardware calibrated",
+    "height_min_m": 0.26,
+    "joint_speed_mean_max_rad_s": 1.0,
+    "linear_speed_max_m_s": 0.15,
+    "loaded_feet_min": 3,
+    "refall_veto": "After first stable3s window: tilt>60deg or height<0.15m for>=0.20s",
+    "terminal_hold_s": 3.0
+  },
+  "note": "Two seeds once each; provisional simulator height calibration; not hardware success probability. Original scores remain separate. Training rewards and reset unchanged."
+}

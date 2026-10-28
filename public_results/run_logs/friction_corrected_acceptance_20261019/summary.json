@@ -1,0 +1,195 @@
+{
+  "protocol": "strict_static_repeated_v4",
+  "results": {
+    "baseline": {
+      "evaluations": 4,
+      "success_mean": 0.6032151442307692,
+      "success_min": 0.59375,
+      "success_max": 0.6135817307692307,
+      "pose": {
+        "back": 0.5606971153846154,
+        "front": 0.6268028846153846,
+        "left": 0.5552884615384616,
+        "right": 0.6700721153846154
+      },
+      "terrain": {
+        "flat": 0.6088362068965517,
+        "hf_pyramid_slope": 0.69,
+        "hf_pyramid_slope_inv": 0.73625,
+        "pyramid_stairs": 0.695,
+        "pyramid_stairs_inv": 0.5725,
+        "random_rough": 0.2175
+      },
+      "recovery_time_mean": 2.343693494551618,
+      "engineering_gate_all": false
+    },
+    "zero": {
+      "evaluations": 2,
+      "success_mean": 0.6084735576923077,
+      "success_min": 0.6063701923076923,
+      "success_max": 0.6105769230769231,
+      "pose": {
+        "back": 0.5637019230769231,
+        "front": 0.6370192307692308,
+        "left": 0.5396634615384615,
+        "right": 0.6935096153846154
+      },
+      "terrain": {
+        "flat": 0.6206896551724137,
+        "hf_pyramid_slope": 0.7075,
+        "hf_pyramid_slope_inv": 0.715,
+        "pyramid_stairs": 0.69,
+        "pyramid_stairs_inv": 0.58,
+        "random_rough": 0.24
+      },
+      "recovery_time_mean": 2.3432179869364678,
+      "engineering_gate_all": false
+    },
+    "old25": {
+      "evaluations": 4,
+      "success_mean": 0.6078725961538461,
+      "success_min": 0.6051682692307693,
+      "success_max": 0.609375,
+      "pose": {
+        "back": 0.5877403846153846,
+        "front": 0.6147836538461539,
+        "left": 0.5444711538461539,
+        "right": 0.6844951923076923
+      },
+      "terrain": {
+        "flat": 0.619073275862069,
+        "hf_pyramid_slope": 0.69,
+        "hf_pyramid_slope_inv": 0.73,
+        "pyramid_stairs": 0.696875,
+        "pyramid_stairs_inv": 0.5775,
+        "random_rough": 0.23
+      },
+      "recovery_time_mean": 2.328158447076225,
+      "engineering_gate_all": false
+    },
+    "joint25": {
+      "evaluations": 4,
+      "success_mean": 0.6071213942307692,
+      "success_min": 0.6033653846153846,
+      "success_max": 0.6141826923076923,
+      "pose": {
+        "back": 0.5919471153846154,
+        "front": 0.6117788461538461,
+        "left": 0.5414663461538461,
+        "right": 0.6832932692307693
+      },
+      "terrain": {
+        "flat": 0.6206896551724138,
+        "hf_pyramid_slope": 0.6875,
+        "hf_pyramid_slope_inv": 0.7162499999999999,
+        "pyramid_stairs": 0.6825,
+        "pyramid_stairs_inv": 0.6074999999999999,
+        "random_rough": 0.235
+      },
+      "recovery_time_mean": 2.3226930967392483,
+      "engineering_gate_all": false
+    },
+    "joint50": {
+      "evaluations": 4,
+      "success_mean": 0.6128305288461539,
+      "success_min": 0.5925480769230769,
+      "success_max": 0.6213942307692307,
+      "pose": {
+        "back": 0.5763221153846154,
+        "front": 0.6466346153846154,
+        "left": 0.5360576923076923,
+        "right": 0.6923076923076923
+      },
+      "terrain": {
+        "flat": 0.6169181034482758,
+        "hf_pyramid_slope": 0.7,
+        "hf_pyramid_slope_inv": 0.71,
+        "pyramid_stairs": 0.70625,
+        "pyramid_stairs_inv": 0.60375,
+        "random_rough": 0.24125
+      },
+      "recovery_time_mean": 2.2823781977992645,
+      "engineering_gate_all": false
+    }
+  },
+  "comparisons": {
+    "old25": [
+      {
+        "seed": 2345,
+        "repeat": 1,
+        "gain": 0.011418269230769273
+      },
+      {
+        "seed": 3456,
+        "repeat": 1,
+        "gain": 0.0018028846153845812
+      },
+      {
+        "seed": 2345,
+        "repeat": 2,
+        "gain": 0.009615384615384581
+      },
+      {
+        "seed": 3456,
+        "repeat": 2,
+        "gain": -0.0042067307692307265
+      }
+    ],
+    "joint25": [
+      {
+        "seed": 2345,
+        "repeat": 1,
+        "gain": 0.010216346153846145
+      },
+      {
+        "seed": 3456,
+        "repeat": 1,
+        "gain": 0.0006009615384615641
+      },
+      {
+        "seed": 2345,
+        "repeat": 2,
+        "gain": 0.015024038461538436
+      },
+      {
+        "seed": 3456,
+        "repeat": 2,
+        "gain": -0.010216346153846145
+      }
+    ],
+    "joint50": [
+      {
+        "seed": 2345,
+        "repeat": 1,
+        "gain": 0.024038461538461564
+      },
+      {
+        "seed": 3456,
+        "repeat": 1,
+        "gain": 0.013221153846153855
+      },
+      {
+        "seed": 2345,
+        "repeat": 2,
+        "gain": 0.022235576923076872
+      },
+      {
+        "seed": 3456,
+        "repeat": 2,
+        "gain": -0.021033653846153855
+      }
+    ]
+  },
+  "zero_checks": [
+    {
+      "seed": 2345,
+      "outcome_differences": 371
+    },
+    {
+      "seed": 3456,
+      "outcome_differences": 391
+    }
+  ],
+  "baseline_retained": "14475",
+  "note": "Prior v1-v3 aggregate comparisons are not valid for ranking: per-case friction assignment was not guaranteed. No model automatically promoted."
+}

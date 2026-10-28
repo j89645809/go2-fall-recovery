@@ -1,0 +1,164 @@
+{
+  "source": "/home/zy/FR-Net/resources/robots/go2/urdf/go2.urdf",
+  "retained_body_order": [
+    "base",
+    "Head_upper",
+    "Head_lower",
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "FL_foot",
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "FR_foot",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf",
+    "RL_foot",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "RR_foot"
+  ],
+  "joints": [
+    {
+      "name": "FL_hip_joint",
+      "lower": -1.0472,
+      "upper": 1.0472,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "FL_thigh_joint",
+      "lower": -1.5708,
+      "upper": 3.4907,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "FL_calf_joint",
+      "lower": -2.7227,
+      "upper": -0.83776,
+      "effort": 35.55,
+      "velocity": 15.7
+    },
+    {
+      "name": "FR_hip_joint",
+      "lower": -1.0472,
+      "upper": 1.0472,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "FR_thigh_joint",
+      "lower": -1.5708,
+      "upper": 3.4907,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "FR_calf_joint",
+      "lower": -2.7227,
+      "upper": -0.83776,
+      "effort": 35.55,
+      "velocity": 15.7
+    },
+    {
+      "name": "RL_hip_joint",
+      "lower": -1.0472,
+      "upper": 1.0472,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "RL_thigh_joint",
+      "lower": -0.5236,
+      "upper": 4.5379,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "RL_calf_joint",
+      "lower": -2.7227,
+      "upper": -0.83776,
+      "effort": 35.55,
+      "velocity": 15.7
+    },
+    {
+      "name": "RR_hip_joint",
+      "lower": -1.0472,
+      "upper": 1.0472,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "RR_thigh_joint",
+      "lower": -0.5236,
+      "upper": 4.5379,
+      "effort": 23.7,
+      "velocity": 30.1
+    },
+    {
+      "name": "RR_calf_joint",
+      "lower": -2.7227,
+      "upper": -0.83776,
+      "effort": 35.55,
+      "velocity": 15.7
+    }
+  ],
+  "model_bodies": [
+    "world",
+    "base",
+    "Head_upper",
+    "Head_lower",
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "FL_calflower",
+    "FL_calflower1",
+    "FL_foot",
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "FR_calflower",
+    "FR_calflower1",
+    "FR_foot",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf",
+    "RL_calflower",
+    "RL_calflower1",
+    "RL_foot",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "RR_calflower",
+    "RR_calflower1",
+    "RR_foot",
+    "imu",
+    "radar"
+  ],
+  "mass": {
+    "base": 6.921,
+    "Head_upper": 0.001,
+    "Head_lower": 0.001,
+    "FL_hip": 0.678,
+    "FL_thigh": 1.152,
+    "FL_calf": 0.154,
+    "FL_foot": 0.04,
+    "FR_hip": 0.678,
+    "FR_thigh": 1.152,
+    "FR_calf": 0.154,
+    "FR_foot": 0.04,
+    "RL_hip": 0.678,
+    "RL_thigh": 1.152,
+    "RL_calf": 0.154,
+    "RL_foot": 0.04,
+    "RR_hip": 0.678,
+    "RR_thigh": 1.152,
+    "RR_calf": 0.154,
+    "RR_foot": 0.04
+  },
+  "note": "Go2 URDF source with current official Unitree position limits and source-exact FR-Net torque saturation (within the official hardware envelope). Source declaration order; Isaac runtime order still requires verification. Collision-only rendering."
+}

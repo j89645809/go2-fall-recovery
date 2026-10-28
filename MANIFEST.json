@@ -1,0 +1,46 @@
+{
+  "artifact": "guide_dog Unitree Go2 / mjlab adaptation",
+  "server_project": "/home/zy/old_data/unitree_rl_mjlab",
+  "verified_environment": {
+    "python": "3.11.16",
+    "torch": "2.14.0+cu130",
+    "task": "Unitree-Go2-Flat",
+    "gpu_used": 4,
+    "dependency_installation": false
+  },
+  "selected_checkpoints": {
+    "models/policy_model_598.pt": {
+      "sha256": "e15984970e551cd70acf596b52aadf3d431a219aa1622ef089a9c14694b08965",
+      "role": "RSL-RL actor and critic after 100 initial plus 500 seeded continuation iterations"
+    },
+    "models/estimators.pt": {
+      "sha256": "9344d2ea97471e2b639d01ba0c4c7c4cd69c2d98a0d940eefa622eeb9a3638f8",
+      "role": "matched velocity MLP and temporal force CNN from the final policy run"
+    },
+    "models/controller.onnx": {
+      "sha256": "cf5968f885186b803e378add9449b7a5551c235e0d5e4ef1e22058ec5db42646",
+      "role": "complete deterministic inference graph with explicit history/reset"
+    }
+  },
+  "validation": {
+    "seeds": [812, 813, 814],
+    "parallel_environments": 32,
+    "steps_per_seed": 1500,
+    "mean_return_across_seeds": 61.904727935791016,
+    "mean_force_rmse_N": 14.105083870241602,
+    "mean_zero_force_baseline_rmse_N": 16.26805779483186,
+    "mean_velocity_rmse_mps": 0.044431220371809736,
+    "total_failure_terminations": 1,
+    "total_timeout_terminations": 96,
+    "onnx_max_action_abs_error": 0.0000021457672119140625,
+    "onnx_closed_loop_comparison_steps": 150,
+    "onnx_checker_passed": true,
+    "onnx_dynamic_batch_tests": [1, 7, 32]
+  },
+  "scope": "Go2/mjlab adaptation of guide_dog training, learned estimators, evaluation, refinement and simulation inference export",
+  "limitations": [
+    "The reward/task implementation is the existing mjlab Go2 velocity task rather than a line-for-line Isaac Gym environment.",
+    "The action output requires the same Go2 mjlab action scaling, offsets, limits and actuator implementation.",
+    "Real-robot deployment and broad multi-seed robustness are not certified."
+  ]
+}

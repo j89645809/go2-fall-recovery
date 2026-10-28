@@ -1,0 +1,71 @@
+{
+  "runs": [
+    {
+      "seed": 2345,
+      "original_cases": 523,
+      "rise_within12s": 504,
+      "entered_among_risen": 498,
+      "arrived_among_risen": 0,
+      "terminal_stable_among_risen": 0,
+      "canonical_terminal_among_risen": 0,
+      "refell_after_arrival_among_risen": 0,
+      "arrived_conditional_on_entry": 0.0,
+      "terminal_stable_conditional_on_entry": 0.0,
+      "never_entered_ids": [
+        483,
+        1273,
+        1279,
+        1481,
+        1559,
+        1639
+      ],
+      "quiet_supported_terminal3s_without_target_error": 77,
+      "command_matches_hold_terminal_count": 417,
+      "median_terminal_hold_error_among_entered": 0.4074907600879669,
+      "target_error_sensitivity_terminal3s": {
+        "0.1": 0,
+        "0.2": 0,
+        "0.3": 13,
+        "0.4": 55,
+        "0.5": 73
+      },
+      "controller_complete_ever_among_risen": 491
+    },
+    {
+      "seed": 3456,
+      "original_cases": 523,
+      "rise_within12s": 504,
+      "entered_among_risen": 494,
+      "arrived_among_risen": 0,
+      "terminal_stable_among_risen": 0,
+      "canonical_terminal_among_risen": 0,
+      "refell_after_arrival_among_risen": 0,
+      "arrived_conditional_on_entry": 0.0,
+      "terminal_stable_conditional_on_entry": 0.0,
+      "never_entered_ids": [
+        58,
+        682,
+        760,
+        866,
+        1279,
+        1323,
+        1403,
+        1442,
+        1522,
+        1559
+      ],
+      "quiet_supported_terminal3s_without_target_error": 85,
+      "command_matches_hold_terminal_count": 407,
+      "median_terminal_hold_error_among_entered": 0.41725414991378784,
+      "target_error_sensitivity_terminal3s": {
+        "0.1": 0,
+        "0.2": 0,
+        "0.3": 22,
+        "0.4": 63,
+        "0.5": 83
+      },
+      "controller_complete_ever_among_risen": 487
+    }
+  ],
+  "criteria": "18s rollout; rise first12s; actual max joint error<0.10rad, tilt<25.84deg, linear3D<0.15m/s, angular<0.35rad/s, meanjointspeed<1rad/s, >=3 feet>8N, vertical foot support>=80%weight, hold mode active. Arrive1s; terminal3s; no major refall after arrival. Original fixed523, not newly selected successes. No control change; no walking tested."
+}

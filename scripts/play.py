@@ -170,7 +170,16 @@ def run_play(task_id: str, cfg: PlayConfig):
   if resolved_viewer == "native":
     NativeMujocoViewer(env, policy).run()
   elif resolved_viewer == "viser":
-    ViserPlayViewer(env, policy).run()
+    if task_id in {
+      "Unitree-Go2-Recovery-Strict",
+      "Unitree-Go2-Recovery-FRNet-Aligned",
+    }:
+      from src.tasks.velocity.config.go2_recovery.settled_viewer import SettledRecoveryViewer
+      viewer = SettledRecoveryViewer(env, policy)
+      viewer.pause()
+      viewer.run()
+    else:
+      ViserPlayViewer(env, policy).run()
   else:
     raise RuntimeError(f"Unsupported viewer backend: {resolved_viewer}")
 

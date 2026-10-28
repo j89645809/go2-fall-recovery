@@ -128,7 +128,17 @@ def run_train(task_id: str, cfg: TrainConfig, log_dir: Path) -> None:
   runner.add_git_repo_to_log(__file__)
   if resume_path is not None:
     print(f"[INFO]: Loading model checkpoint from: {resume_path}")
-    runner.load(str(resume_path))
+    if os.environ.get("FRNET_RESIDUAL", "0") == "1":
+      runner.load(str(resume_path), load_cfg={"actor":True,"critic":True,"optimizer":False,"iteration":True,"rnd":False})
+    else:
+      runner.load(str(resume_path))
+    override_lr = os.environ.get('FRNET_OVERRIDE_LR')
+    if override_lr is not None and hasattr(runner, 'alg'):
+      value = float(override_lr)
+      runner.alg.learning_rate = value
+      for group in runner.alg.optimizer.param_groups:
+        group['lr'] = value
+      print(f"[INFO]: Overriding resumed learning rate to {value:g}")
 
   # Only write config files from rank 0 to avoid race conditions.
   if rank == 0:

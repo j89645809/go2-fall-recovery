@@ -69,6 +69,39 @@ public:
 
         states.push_back(std::move(state));
     }
+
+    bool force_state(const std::string& state_name)
+    {
+        if(!FSMStringMap.right.count(state_name))
+        {
+            spdlog::error("FSM: State_{} not found", state_name);
+            return false;
+        }
+
+        int state_id = FSMStringMap.right.at(state_name);
+        if(currentState && currentState->isState(state_id))
+        {
+            return true;
+        }
+
+        for(auto & state : states)
+        {
+            if(state->isState(state_id))
+            {
+                if(currentState)
+                {
+                    spdlog::info("FSM: Force state from {} to {}", currentState->getStateString(), state->getStateString());
+                    currentState->exit();
+                }
+                currentState = state;
+                currentState->enter();
+                return true;
+            }
+        }
+
+        spdlog::error("FSM: State_{} is registered but has no instance", state_name);
+        return false;
+    }
     
     ~CtrlFSM()
     {

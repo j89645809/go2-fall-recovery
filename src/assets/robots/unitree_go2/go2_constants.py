@@ -41,8 +41,8 @@ GO2_ACTUATOR_HIP = BuiltinPositionActuatorCfg(
   target_names_expr=(
     ".*hip_.*",
   ),
-  stiffness=20.0,
-  damping=1.0,
+  stiffness=30.0,
+  damping=0.8,
   effort_limit=23.5,
   armature=0.01,
 )
@@ -50,8 +50,8 @@ GO2_ACTUATOR_THIGH = BuiltinPositionActuatorCfg(
   target_names_expr=(
     ".*thigh_.*",
   ),
-  stiffness=20.0,
-  damping=1.0,
+  stiffness=30.0,
+  damping=0.8,
   effort_limit=23.5,
   armature=0.01,
 )
@@ -59,8 +59,8 @@ GO2_ACTUATOR_CALF = BuiltinPositionActuatorCfg(
   target_names_expr=(
     ".*calf_.*",
   ),
-  stiffness=40.0,
-  damping=2.0,
+  stiffness=30.0,
+  damping=0.8,
   effort_limit=45,
   armature=0.02,
 )
@@ -71,10 +71,10 @@ GO2_ACTUATOR_CALF = BuiltinPositionActuatorCfg(
 
 
 INIT_STATE = EntityCfg.InitialStateCfg(
-  pos=(0.0, 0.0, 0.32),
+  pos=(0.0, 0.0, 0.6),
   joint_pos={
-    ".*thigh_joint": 0.9,
-    ".*calf_joint": -1.8,
+    ".*thigh_joint": 1.5,
+    ".*calf_joint": -2.4,
     ".*R_hip_joint": 0.1,
     ".*L_hip_joint": -0.1,
   },

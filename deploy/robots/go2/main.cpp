@@ -3,6 +3,9 @@
 #include "FSM/State_FixStand.h"
 #include "FSM/State_RLBase.h"
 
+#include <string>
+#include <vector>
+
 std::unique_ptr<LowCmd_t> FSMState::lowcmd = nullptr;
 std::shared_ptr<LowState_t> FSMState::lowstate = nullptr;
 std::shared_ptr<Keyboard> FSMState::keyboard = nullptr;
@@ -26,8 +29,23 @@ void init_fsm_state()
 
 int main(int argc, char** argv)
 {
+    bool auto_start = false;
+    std::vector<char*> filtered_args;
+    filtered_args.reserve(argc);
+    filtered_args.push_back(argv[0]);
+    for(int i = 1; i < argc; ++i)
+    {
+        if(std::string(argv[i]) == "--auto-start")
+        {
+            auto_start = true;
+            continue;
+        }
+        filtered_args.push_back(argv[i]);
+    }
+    int filtered_argc = static_cast<int>(filtered_args.size());
+
     // Load parameters
-    auto vm = param::helper(argc, argv);
+    auto vm = param::helper(filtered_argc, filtered_args.data());
 
     std::cout << " --- Unitree Robotics --- \n";
     std::cout << "     Go2 Controller \n";
@@ -43,6 +61,15 @@ int main(int argc, char** argv)
 
     std::cout << "Press [L2 + up] to enter FixStand mode.\n";
     std::cout << "And then press [R2 + A] to start controlling the robot.\n";
+
+    if(auto_start)
+    {
+        spdlog::warn("Auto-start is enabled for simulation testing. Do not use this flag on a real robot.");
+        sleep(2);
+        fsm->force_state("FixStand");
+        sleep(3);
+        fsm->force_state("Velocity");
+    }
 
     while (true)
     {
