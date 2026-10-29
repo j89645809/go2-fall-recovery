@@ -53,7 +53,7 @@ conda activate unitree_rl_mjlab
 通过 Git 克隆仓库：
 
 ```bash
-git clone https://github.com/unitreerobotics/unitree_rl_mjlab.git
+git clone https://github.com/j89645809/go2-fall-recovery.git
 ```
 
 ### 2.2 安装依赖
@@ -63,10 +63,10 @@ sudo apt install -y libyaml-cpp-dev libboost-all-dev libeigen3-dev libspdlog-dev
 ```
 
 我们将其余所需依赖放入 setup.py 文件中，
-进入 unitree_rl_mjlab 项目根目录并安装：
+进入 go2-fall-recovery 项目根目录并安装：
 
 ```bash
-cd unitree_rl_mjlab
+cd go2-fall-recovery
 pip install -e .
 ```
 
